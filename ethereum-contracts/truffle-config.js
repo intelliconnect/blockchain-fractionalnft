@@ -7,8 +7,8 @@ module.exports = {
 	networks: {
 		ganache: {
 			host: "127.0.0.1",
-			network_id: "5777",
-			port: process.env.GANACHE_PORT || 7545
+			network_id: "*",
+			port: process.env.GANACHE_PORT || 8545
 		},
 		goerli: {
 			provider: () => new HDWalletProvider(

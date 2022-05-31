@@ -1,1 +1,1 @@
-#Blockchain-fractionalNFT
+#blockchain fractional-NFT
