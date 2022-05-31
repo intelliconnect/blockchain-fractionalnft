@@ -1,0 +1,280 @@
+{
+  "contractName": "IRelayRecipient",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "forwarder",
+          "type": "address"
+        }
+      ],
+      "name": "isTrustedForwarder",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "versionRecipient",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.13+commit.abaa5c0e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"forwarder\",\"type\":\"address\"}],\"name\":\"isTrustedForwarder\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"versionRecipient\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"Superfluid\",\"details\":\"A contract must implement this interface in order to support relayed transactionsIt is better to inherit the BaseRelayRecipient as its implementation\",\"kind\":\"dev\",\"methods\":{\"isTrustedForwarder(address)\":{\"details\":\"the forwarder is required to verify the sender's signature, and verify      the call is not a replay.\"},\"versionRecipient()\":{\"details\":\"EIP 2771 version NOTE: - It is not clear if it is actually from the EIP 2771.... - https://docs.biconomy.io/guides/enable-gasless-transactions/eip-2771\"}},\"title\":\"Relay recipient interface\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"isTrustedForwarder(address)\":{\"notice\":\"Returns if the forwarder is trusted to forward relayed transactions to us.\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/interfaces/utils/IRelayRecipient.sol\":\"IRelayRecipient\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/interfaces/utils/IRelayRecipient.sol\":{\"keccak256\":\"0x3f531ce91c165b7581483798cc920d38828d509df6cb9d427a10c922b4627790\",\"license\":\"AGPLv3\",\"urls\":[\"bzz-raw://c4b872da16464ec4a06422b2bf0e95594f0458cca02993cefdbc76b5f7b7a974\",\"dweb:/ipfs/Qma9nVTfu6kbLQ6y58ZnDRXX8YzKiyASWeCsdY8ue6rpdT\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: AGPLv3\npragma solidity >= 0.8.0;\n\n// MODIFIED FROM: https://github.com/opengsn/forwarder/blob/master/contracts/interfaces/IRelayRecipient.sol\n\n/**\n * @title Relay recipient interface\n * @author Superfluid\n * @dev A contract must implement this interface in order to support relayed transactions\n * @dev It is better to inherit the BaseRelayRecipient as its implementation\n */\ninterface IRelayRecipient {\n\n    /**\n     * @notice Returns if the forwarder is trusted to forward relayed transactions to us.\n     * @dev the forwarder is required to verify the sender's signature, and verify\n     *      the call is not a replay.\n     */\n    function isTrustedForwarder(address forwarder) external view returns(bool);\n\n    /**\n     * @dev EIP 2771 version\n     *\n     * NOTE:\n     * - It is not clear if it is actually from the EIP 2771....\n     * - https://docs.biconomy.io/guides/enable-gasless-transactions/eip-2771\n     */\n    function versionRecipient() external view returns (string memory);\n}\n",
+  "sourcePath": "/home/runner/work/protocol-monorepo/protocol-monorepo/packages/ethereum-contracts/contracts/interfaces/utils/IRelayRecipient.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/interfaces/utils/IRelayRecipient.sol",
+    "exportedSymbols": {
+      "IRelayRecipient": [
+        19549
+      ]
+    },
+    "id": 19550,
+    "license": "AGPLv3",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 19533,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "35:25:60"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "IRelayRecipient",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 19534,
+          "nodeType": "StructuredDocumentation",
+          "src": "171:232:60",
+          "text": " @title Relay recipient interface\n @author Superfluid\n @dev A contract must implement this interface in order to support relayed transactions\n @dev It is better to inherit the BaseRelayRecipient as its implementation"
+        },
+        "fullyImplemented": false,
+        "id": 19549,
+        "linearizedBaseContracts": [
+          19549
+        ],
+        "name": "IRelayRecipient",
+        "nameLocation": "414:15:60",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "documentation": {
+              "id": 19535,
+              "nodeType": "StructuredDocumentation",
+              "src": "437:222:60",
+              "text": " @notice Returns if the forwarder is trusted to forward relayed transactions to us.\n @dev the forwarder is required to verify the sender's signature, and verify\n      the call is not a replay."
+            },
+            "functionSelector": "572b6c05",
+            "id": 19542,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "isTrustedForwarder",
+            "nameLocation": "673:18:60",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 19538,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 19537,
+                  "mutability": "mutable",
+                  "name": "forwarder",
+                  "nameLocation": "700:9:60",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 19542,
+                  "src": "692:17:60",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 19536,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "692:7:60",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "691:19:60"
+            },
+            "returnParameters": {
+              "id": 19541,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 19540,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 19542,
+                  "src": "733:4:60",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 19539,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "733:4:60",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "732:6:60"
+            },
+            "scope": 19549,
+            "src": "664:75:60",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 19543,
+              "nodeType": "StructuredDocumentation",
+              "src": "745:203:60",
+              "text": " @dev EIP 2771 version\n NOTE:\n - It is not clear if it is actually from the EIP 2771....\n - https://docs.biconomy.io/guides/enable-gasless-transactions/eip-2771"
+            },
+            "functionSelector": "486ff0cd",
+            "id": 19548,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "versionRecipient",
+            "nameLocation": "962:16:60",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 19544,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "978:2:60"
+            },
+            "returnParameters": {
+              "id": 19547,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 19546,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 19548,
+                  "src": "1004:13:60",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 19545,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1004:6:60",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1003:15:60"
+            },
+            "scope": 19549,
+            "src": "953:66:60",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 19550,
+        "src": "404:617:60",
+        "usedErrors": []
+      }
+    ],
+    "src": "35:987:60"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.13+commit.abaa5c0e.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.7",
+  "updatedAt": "2022-05-09T17:31:25.631Z",
+  "devdoc": {
+    "author": "Superfluid",
+    "details": "A contract must implement this interface in order to support relayed transactionsIt is better to inherit the BaseRelayRecipient as its implementation",
+    "kind": "dev",
+    "methods": {
+      "isTrustedForwarder(address)": {
+        "details": "the forwarder is required to verify the sender's signature, and verify      the call is not a replay."
+      },
+      "versionRecipient()": {
+        "details": "EIP 2771 version NOTE: - It is not clear if it is actually from the EIP 2771.... - https://docs.biconomy.io/guides/enable-gasless-transactions/eip-2771"
+      }
+    },
+    "title": "Relay recipient interface",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {
+      "isTrustedForwarder(address)": {
+        "notice": "Returns if the forwarder is trusted to forward relayed transactions to us."
+      }
+    },
+    "version": 1
+  }
+}

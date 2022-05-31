@@ -1,0 +1,252 @@
+{
+  "contractName": "IMultiSigWallet",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "destination",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "value",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes",
+          "name": "data",
+          "type": "bytes"
+        }
+      ],
+      "name": "submitTransaction",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "transactionId",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.13+commit.abaa5c0e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"submitTransaction\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"transactionId\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"Superfluid\",\"kind\":\"dev\",\"methods\":{},\"title\":\"Multisig wallet interface\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/interfaces/utils/IMultiSigWallet.sol\":\"IMultiSigWallet\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/interfaces/utils/IMultiSigWallet.sol\":{\"keccak256\":\"0x6c6f44005bdce8d76e559fdeb57d51439bb88007d1ec8f2ba9c3e3c8059da641\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://c6d0dfaf0d9f0d5fb9451ce2ff82117fc51eb869542e732d8a80ae3c0b492607\",\"dweb:/ipfs/QmPT3VzP7UPR1MyrTXLSmfKSK9fxbCH6VPzy64f2vYKQcN\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: UNLICENSED\n\npragma solidity >= 0.8.0;\n/**\n * @title Multisig wallet interface\n * @author Superfluid\n */\ninterface IMultiSigWallet {\n    function submitTransaction(address destination, uint value, bytes calldata data)\n        external\n        returns (uint transactionId);\n}\n",
+  "sourcePath": "/home/runner/work/protocol-monorepo/protocol-monorepo/packages/ethereum-contracts/contracts/interfaces/utils/IMultiSigWallet.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/interfaces/utils/IMultiSigWallet.sol",
+    "exportedSymbols": {
+      "IMultiSigWallet": [
+        19531
+      ]
+    },
+    "id": 19532,
+    "license": "UNLICENSED",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 19518,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "40:25:59"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "IMultiSigWallet",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 19519,
+          "nodeType": "StructuredDocumentation",
+          "src": "66:65:59",
+          "text": " @title Multisig wallet interface\n @author Superfluid"
+        },
+        "fullyImplemented": false,
+        "id": 19531,
+        "linearizedBaseContracts": [
+          19531
+        ],
+        "name": "IMultiSigWallet",
+        "nameLocation": "142:15:59",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "functionSelector": "c6427474",
+            "id": 19530,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "submitTransaction",
+            "nameLocation": "173:17:59",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 19526,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 19521,
+                  "mutability": "mutable",
+                  "name": "destination",
+                  "nameLocation": "199:11:59",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 19530,
+                  "src": "191:19:59",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 19520,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "191:7:59",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 19523,
+                  "mutability": "mutable",
+                  "name": "value",
+                  "nameLocation": "217:5:59",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 19530,
+                  "src": "212:10:59",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 19522,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "212:4:59",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 19525,
+                  "mutability": "mutable",
+                  "name": "data",
+                  "nameLocation": "239:4:59",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 19530,
+                  "src": "224:19:59",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 19524,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "224:5:59",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "190:54:59"
+            },
+            "returnParameters": {
+              "id": 19529,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 19528,
+                  "mutability": "mutable",
+                  "name": "transactionId",
+                  "nameLocation": "284:13:59",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 19530,
+                  "src": "279:18:59",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 19527,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "279:4:59",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "278:20:59"
+            },
+            "scope": 19531,
+            "src": "164:135:59",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 19532,
+        "src": "132:169:59",
+        "usedErrors": []
+      }
+    ],
+    "src": "40:262:59"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.13+commit.abaa5c0e.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.7",
+  "updatedAt": "2022-05-09T17:31:25.631Z",
+  "devdoc": {
+    "author": "Superfluid",
+    "kind": "dev",
+    "methods": {},
+    "title": "Multisig wallet interface",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

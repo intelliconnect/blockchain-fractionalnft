@@ -1,0 +1,837 @@
+{
+  "contractName": "AgreementBase",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "bytes32",
+          "name": "uuid",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "codeAddress",
+          "type": "address"
+        }
+      ],
+      "name": "CodeUpdated",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "agreementType",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getCodeAddress",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "codeAddress",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract ISuperfluidToken",
+          "name": "token",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "time",
+          "type": "uint256"
+        }
+      ],
+      "name": "realtimeBalanceOf",
+      "outputs": [
+        {
+          "internalType": "int256",
+          "name": "dynamicBalance",
+          "type": "int256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "deposit",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "owedDeposit",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "proxiableUUID",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newAddress",
+          "type": "address"
+        }
+      ],
+      "name": "updateCode",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.13+commit.abaa5c0e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"bytes32\",\"name\":\"uuid\",\"type\":\"bytes32\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"codeAddress\",\"type\":\"address\"}],\"name\":\"CodeUpdated\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"agreementType\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getCodeAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"codeAddress\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"proxiableUUID\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"contract ISuperfluidToken\",\"name\":\"token\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"time\",\"type\":\"uint256\"}],\"name\":\"realtimeBalanceOf\",\"outputs\":[{\"internalType\":\"int256\",\"name\":\"dynamicBalance\",\"type\":\"int256\"},{\"internalType\":\"uint256\",\"name\":\"deposit\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"owedDeposit\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newAddress\",\"type\":\"address\"}],\"name\":\"updateCode\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"Superfluid\",\"kind\":\"dev\",\"methods\":{\"agreementType()\":{\"details\":\"Get the type of the agreement class\"},\"getCodeAddress()\":{\"details\":\"Get current implementation code address.\"},\"proxiableUUID()\":{\"details\":\"Proxiable UUID marker function, this would help to avoid wrong logic      contract to be used for upgrading. NOTE: The semantics of the UUID deviates from the actual UUPS standard,       where it is equivalent of _IMPLEMENTATION_SLOT.\"},\"realtimeBalanceOf(address,address,uint256)\":{\"details\":\"Calculate the real-time balance for the account of this agreement class\",\"params\":{\"account\":\"Account the state belongs to\",\"time\":\"Time used for the calculation\"},\"returns\":{\"deposit\":\"Account deposit amount of this agreement\",\"dynamicBalance\":\"Dynamic balance portion of real-time balance of this agreement\",\"owedDeposit\":\"Account owed deposit amount of this agreement\"}}},\"title\":\"Superfluid agreement base boilerplate contract\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/agreements/AgreementBase.sol\":\"AgreementBase\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts/proxy/utils/Initializable.sol\":{\"keccak256\":\"0x4823752b07b8ea4ca971b217e39457930e7cb103c2c91e2a29729e5ca907e4f0\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6f319af26a9ade3e6cf3698bf1b84aa6213bdd7a76606ea9ba56ced163593934\",\"dweb:/ipfs/QmZ2u9zen5Htan4dSP1RZCY2XqB9HUwqkNCMzdn7aV2jWc\"]},\"@openzeppelin/contracts/utils/Address.sol\":{\"keccak256\":\"0x2ccf9d2313a313d41a791505f2b5abfdc62191b5d4334f7f7a82691c088a1c87\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b3a57d0854b2fdce6ebff933a48dca2445643d1eccfc27f00292e937f26c6a58\",\"dweb:/ipfs/QmW45rZooS9TqR4YXUbjRbtf2Bpb5ouSarBvfW1LdGprvV\"]},\"project:/contracts/agreements/AgreementBase.sol\":{\"keccak256\":\"0xe59fc8bbe728c574773b5d3a3e9cfb4e8f323e9a3c3267a82d36fb79921b9997\",\"license\":\"AGPLv3\",\"urls\":[\"bzz-raw://0e21d969b3b996ab211eff83fa5bb7041614c0ac597c7479012c0fe625f4e15f\",\"dweb:/ipfs/QmWThBae9FCDgCAcco2bZicvsPq8vz5K1XW66hz3LXSK2V\"]},\"project:/contracts/interfaces/superfluid/ISuperAgreement.sol\":{\"keccak256\":\"0xc3a6a907245116bcecc70fe4b207454012e8ce4fa190228fb8bbe39e0b1bc5cf\",\"license\":\"AGPLv3\",\"urls\":[\"bzz-raw://83c116bdae48685d20e5a27c942111e685ec1ef6334e7ff6f6d9af66edbd8025\",\"dweb:/ipfs/QmTnVuNTaRFiDmkAmDk7NFYdfQTW1kqgBZiY2exC6k8jDx\"]},\"project:/contracts/interfaces/superfluid/ISuperfluidToken.sol\":{\"keccak256\":\"0x9189eaba9e856cc4932ea29eeaf4e89a09448dde13860591691ec122856fdc75\",\"license\":\"AGPLv3\",\"urls\":[\"bzz-raw://7d5991b906bba706373f5bfe3c2c8789a7a45360a41eee50574272b393c4ab70\",\"dweb:/ipfs/QmVCXVnYA13vMNxa7rGzNB129sUXiGE1asuHdnEMEPVZsp\"]},\"project:/contracts/upgradability/UUPSProxiable.sol\":{\"keccak256\":\"0x5f50cec21a585dab7b59545aeb51735f36e3222e4b0768370be8d46373d0ef05\",\"license\":\"AGPLv3\",\"urls\":[\"bzz-raw://acdd57d81b5b2d346da335636baf1e37da3d31cf2eef58af493e43bc65a27414\",\"dweb:/ipfs/QmTepRBNAfRBXVDBM37ME1jpw1YgcseVehC17sWpEYeFDc\"]},\"project:/contracts/upgradability/UUPSUtils.sol\":{\"keccak256\":\"0xffec084e77ce3c0b595f0612687242f3d8b7a84cab15e5650c17428ee48d0b5b\",\"license\":\"AGPLv3\",\"urls\":[\"bzz-raw://be0183816467872b053562d9a737042ac3a91ea67e3c74e03de5db7226f3e73b\",\"dweb:/ipfs/QmUyi4YXh1T7MExbrLwZ6rAdXTPChF8q27YpZxxniR6CHM\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: AGPLv3\npragma solidity 0.8.13;\n\nimport { UUPSProxiable } from \"../upgradability/UUPSProxiable.sol\";\nimport { ISuperAgreement } from \"../interfaces/superfluid/ISuperAgreement.sol\";\n\n\n/**\n * @title Superfluid agreement base boilerplate contract\n * @author Superfluid\n */\nabstract contract AgreementBase is\n    UUPSProxiable,\n    ISuperAgreement\n{\n    address immutable internal _host;\n\n    constructor(address host)\n    {\n        _host = host;\n    }\n\n    function proxiableUUID()\n        public view override\n        returns (bytes32)\n    {\n        return ISuperAgreement(this).agreementType();\n    }\n\n    function updateCode(address newAddress)\n        external override\n    {\n        require(msg.sender == _host, \"only host can update code\");\n        return _updateCodeAddress(newAddress);\n    }\n\n}\n",
+  "sourcePath": "/home/runner/work/protocol-monorepo/protocol-monorepo/packages/ethereum-contracts/contracts/agreements/AgreementBase.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/agreements/AgreementBase.sol",
+    "exportedSymbols": {
+      "AgreementBase": [
+        5402
+      ],
+      "ISuperAgreement": [
+        17949
+      ],
+      "UUPSProxiable": [
+        36334
+      ]
+    },
+    "id": 5403,
+    "license": "AGPLv3",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 5348,
+        "literals": [
+          "solidity",
+          "0.8",
+          ".13"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "35:23:34"
+      },
+      {
+        "absolutePath": "project:/contracts/upgradability/UUPSProxiable.sol",
+        "file": "../upgradability/UUPSProxiable.sol",
+        "id": 5350,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 5403,
+        "sourceUnit": 36335,
+        "src": "60:67:34",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 5349,
+              "name": "UUPSProxiable",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 36334,
+              "src": "69:13:34",
+              "typeDescriptions": {}
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "project:/contracts/interfaces/superfluid/ISuperAgreement.sol",
+        "file": "../interfaces/superfluid/ISuperAgreement.sol",
+        "id": 5352,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 5403,
+        "sourceUnit": 17950,
+        "src": "128:79:34",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 5351,
+              "name": "ISuperAgreement",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 17949,
+              "src": "137:15:34",
+              "typeDescriptions": {}
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "abstract": true,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 5354,
+              "name": "UUPSProxiable",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 36334,
+              "src": "336:13:34"
+            },
+            "id": 5355,
+            "nodeType": "InheritanceSpecifier",
+            "src": "336:13:34"
+          },
+          {
+            "baseName": {
+              "id": 5356,
+              "name": "ISuperAgreement",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 17949,
+              "src": "355:15:34"
+            },
+            "id": 5357,
+            "nodeType": "InheritanceSpecifier",
+            "src": "355:15:34"
+          }
+        ],
+        "canonicalName": "AgreementBase",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": {
+          "id": 5353,
+          "nodeType": "StructuredDocumentation",
+          "src": "210:86:34",
+          "text": " @title Superfluid agreement base boilerplate contract\n @author Superfluid"
+        },
+        "fullyImplemented": false,
+        "id": 5402,
+        "linearizedBaseContracts": [
+          5402,
+          17949,
+          36334,
+          762
+        ],
+        "name": "AgreementBase",
+        "nameLocation": "315:13:34",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 5359,
+            "mutability": "immutable",
+            "name": "_host",
+            "nameLocation": "404:5:34",
+            "nodeType": "VariableDeclaration",
+            "scope": 5402,
+            "src": "377:32:34",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 5358,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "377:7:34",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 5368,
+              "nodeType": "Block",
+              "src": "446:29:34",
+              "statements": [
+                {
+                  "expression": {
+                    "id": 5366,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 5364,
+                      "name": "_host",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 5359,
+                      "src": "456:5:34",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "id": 5365,
+                      "name": "host",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 5361,
+                      "src": "464:4:34",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "456:12:34",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 5367,
+                  "nodeType": "ExpressionStatement",
+                  "src": "456:12:34"
+                }
+              ]
+            },
+            "id": 5369,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nameLocation": "-1:-1:-1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5362,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5361,
+                  "mutability": "mutable",
+                  "name": "host",
+                  "nameLocation": "436:4:34",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5369,
+                  "src": "428:12:34",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 5360,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "428:7:34",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "427:14:34"
+            },
+            "returnParameters": {
+              "id": 5363,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "446:0:34"
+            },
+            "scope": 5402,
+            "src": "416:59:34",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "internal"
+          },
+          {
+            "baseFunctions": [
+              36274
+            ],
+            "body": {
+              "id": 5381,
+              "nodeType": "Block",
+              "src": "565:61:34",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "expression": {
+                        "arguments": [
+                          {
+                            "id": 5376,
+                            "name": "this",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 4294967268,
+                            "src": "598:4:34",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_AgreementBase_$5402",
+                              "typeString": "contract AgreementBase"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_contract$_AgreementBase_$5402",
+                              "typeString": "contract AgreementBase"
+                            }
+                          ],
+                          "id": 5375,
+                          "name": "ISuperAgreement",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 17949,
+                          "src": "582:15:34",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_contract$_ISuperAgreement_$17949_$",
+                            "typeString": "type(contract ISuperAgreement)"
+                          }
+                        },
+                        "id": 5377,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "582:21:34",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_ISuperAgreement_$17949",
+                          "typeString": "contract ISuperAgreement"
+                        }
+                      },
+                      "id": 5378,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "agreementType",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 17931,
+                      "src": "582:35:34",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_view$__$returns$_t_bytes32_$",
+                        "typeString": "function () view external returns (bytes32)"
+                      }
+                    },
+                    "id": 5379,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "582:37:34",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "functionReturnParameters": 5374,
+                  "id": 5380,
+                  "nodeType": "Return",
+                  "src": "575:44:34"
+                }
+              ]
+            },
+            "functionSelector": "52d1902d",
+            "id": 5382,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "proxiableUUID",
+            "nameLocation": "490:13:34",
+            "nodeType": "FunctionDefinition",
+            "overrides": {
+              "id": 5371,
+              "nodeType": "OverrideSpecifier",
+              "overrides": [],
+              "src": "526:8:34"
+            },
+            "parameters": {
+              "id": 5370,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "503:2:34"
+            },
+            "returnParameters": {
+              "id": 5374,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5373,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5382,
+                  "src": "552:7:34",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 5372,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "552:7:34",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "551:9:34"
+            },
+            "scope": 5402,
+            "src": "481:145:34",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "baseFunctions": [
+              36268
+            ],
+            "body": {
+              "id": 5400,
+              "nodeType": "Block",
+              "src": "702:121:34",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "commonType": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "id": 5392,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "expression": {
+                            "id": 5389,
+                            "name": "msg",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 4294967281,
+                            "src": "720:3:34",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_message",
+                              "typeString": "msg"
+                            }
+                          },
+                          "id": 5390,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "sender",
+                          "nodeType": "MemberAccess",
+                          "src": "720:10:34",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "id": 5391,
+                          "name": "_host",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 5359,
+                          "src": "734:5:34",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "src": "720:19:34",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "hexValue": "6f6e6c7920686f73742063616e2075706461746520636f6465",
+                        "id": 5393,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "741:27:34",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_6a5a6d12055846614699866b43f4ca83ca269360732daadab688ae700f7513a6",
+                          "typeString": "literal_string \"only host can update code\""
+                        },
+                        "value": "only host can update code"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_6a5a6d12055846614699866b43f4ca83ca269360732daadab688ae700f7513a6",
+                          "typeString": "literal_string \"only host can update code\""
+                        }
+                      ],
+                      "id": 5388,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        4294967278,
+                        4294967278
+                      ],
+                      "referencedDeclaration": 4294967278,
+                      "src": "712:7:34",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 5394,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "712:57:34",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 5395,
+                  "nodeType": "ExpressionStatement",
+                  "src": "712:57:34"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "id": 5397,
+                        "name": "newAddress",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 5384,
+                        "src": "805:10:34",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 5396,
+                      "name": "_updateCodeAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 36327,
+                      "src": "786:18:34",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 5398,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "786:30:34",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "functionReturnParameters": 5387,
+                  "id": 5399,
+                  "nodeType": "Return",
+                  "src": "779:37:34"
+                }
+              ]
+            },
+            "functionSelector": "46951954",
+            "id": 5401,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "updateCode",
+            "nameLocation": "641:10:34",
+            "nodeType": "FunctionDefinition",
+            "overrides": {
+              "id": 5386,
+              "nodeType": "OverrideSpecifier",
+              "overrides": [],
+              "src": "689:8:34"
+            },
+            "parameters": {
+              "id": 5385,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5384,
+                  "mutability": "mutable",
+                  "name": "newAddress",
+                  "nameLocation": "660:10:34",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5401,
+                  "src": "652:18:34",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 5383,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "652:7:34",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "651:20:34"
+            },
+            "returnParameters": {
+              "id": 5387,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "702:0:34"
+            },
+            "scope": 5402,
+            "src": "632:191:34",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 5403,
+        "src": "297:529:34",
+        "usedErrors": []
+      }
+    ],
+    "src": "35:792:34"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.13+commit.abaa5c0e.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.7",
+  "updatedAt": "2022-05-09T17:31:25.498Z",
+  "devdoc": {
+    "author": "Superfluid",
+    "kind": "dev",
+    "methods": {
+      "agreementType()": {
+        "details": "Get the type of the agreement class"
+      },
+      "getCodeAddress()": {
+        "details": "Get current implementation code address."
+      },
+      "proxiableUUID()": {
+        "details": "Proxiable UUID marker function, this would help to avoid wrong logic      contract to be used for upgrading. NOTE: The semantics of the UUID deviates from the actual UUPS standard,       where it is equivalent of _IMPLEMENTATION_SLOT."
+      },
+      "realtimeBalanceOf(address,address,uint256)": {
+        "details": "Calculate the real-time balance for the account of this agreement class",
+        "params": {
+          "account": "Account the state belongs to",
+          "time": "Time used for the calculation"
+        },
+        "returns": {
+          "deposit": "Account deposit amount of this agreement",
+          "dynamicBalance": "Dynamic balance portion of real-time balance of this agreement",
+          "owedDeposit": "Account owed deposit amount of this agreement"
+        }
+      }
+    },
+    "title": "Superfluid agreement base boilerplate contract",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

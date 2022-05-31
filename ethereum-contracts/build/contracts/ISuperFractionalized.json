@@ -1,0 +1,418 @@
+{
+  "contractName": "ISuperFractionalized",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "symbol",
+          "type": "string"
+        },
+        {
+          "internalType": "uint256",
+          "name": "initialSupply",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "tokenId_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "tokenAddress_",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "recipient",
+          "type": "address"
+        }
+      ],
+      "name": "initialize",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "tokenURI",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "_uri",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.11+commit.d7f03943\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"symbol\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"initialSupply\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"tokenId_\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"tokenAddress_\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"recipient\",\"type\":\"address\"}],\"name\":\"initialize\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"tokenURI\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"_uri\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"jtriley.eth\",\"kind\":\"dev\",\"methods\":{\"initialize(string,string,uint256,uint256,address,address)\":{\"params\":{\"initialSupply\":\"Initial fractional supply\",\"name\":\"Super Fractionalized name\",\"recipient\":\"Receiver of initialSupply\",\"symbol\":\"Super Fractionalized symbol\",\"tokenAddress_\":\"Underlying NFT address\",\"tokenId_\":\"Underlying NFT token id\"}},\"tokenURI()\":{\"returns\":{\"_uri\":\"Token URI returned from underlying\"}}},\"title\":\"Interface for Super Fractionalized NFT\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"initialize(string,string,uint256,uint256,address,address)\":{\"notice\":\"Initializes with logic contract, MUST BE UPGRADED\"},\"tokenURI()\":{\"notice\":\"Pass through function to underlying ERC721\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/interfaces/ISuperFractionalized.sol\":\"ISuperFractionalized\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/interfaces/ISuperFractionalized.sol\":{\"keccak256\":\"0x4708c81233b51993374ea0fa01a7cf12670e36877b2626bae4b5b6d04bfc3995\",\"license\":\"AGPLv3\",\"urls\":[\"bzz-raw://f5a00f7423948bdc979131ab1ffa8a4472773751a8c314499f5beea7e6dd966a\",\"dweb:/ipfs/QmaXmxPtqkaGukwF3Bgc3GJgtttG1AjZwN9cZCWM9hjgRH\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: AGPLv3\npragma solidity ^0.8.0;\n\n/// @title Interface for Super Fractionalized NFT\n/// @author jtriley.eth\ninterface ISuperFractionalized {\n\n    /// @notice Initializes with logic contract, MUST BE UPGRADED\n    /// @param name Super Fractionalized name\n    /// @param symbol Super Fractionalized symbol\n    /// @param initialSupply Initial fractional supply\n    /// @param tokenId_ Underlying NFT token id\n    /// @param tokenAddress_ Underlying NFT address\n    /// @param recipient Receiver of initialSupply\n    function initialize(\n\t\tstring memory name,\n\t\tstring memory symbol,\n\t\tuint256 initialSupply,\n\t\tuint256 tokenId_,\n\t\taddress tokenAddress_,\n\t\taddress recipient\n    ) external;\n\n    /// @notice Pass through function to underlying ERC721\n    /// @return _uri Token URI returned from underlying\n    function tokenURI() external view returns (string memory _uri);\n\n}\n",
+  "sourcePath": "/home/rishabh/superfractionalizer/ethereum-contracts/contracts/interfaces/ISuperFractionalized.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/interfaces/ISuperFractionalized.sol",
+    "exportedSymbols": {
+      "ISuperFractionalized": [
+        4162
+      ]
+    },
+    "id": 4163,
+    "license": "AGPLv3",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 4138,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "35:23:25"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "ISuperFractionalized",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 4139,
+          "nodeType": "StructuredDocumentation",
+          "src": "60:74:25",
+          "text": "@title Interface for Super Fractionalized NFT\n @author jtriley.eth"
+        },
+        "fullyImplemented": false,
+        "id": 4162,
+        "linearizedBaseContracts": [
+          4162
+        ],
+        "name": "ISuperFractionalized",
+        "nameLocation": "144:20:25",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "documentation": {
+              "id": 4140,
+              "nodeType": "StructuredDocumentation",
+              "src": "172:363:25",
+              "text": "@notice Initializes with logic contract, MUST BE UPGRADED\n @param name Super Fractionalized name\n @param symbol Super Fractionalized symbol\n @param initialSupply Initial fractional supply\n @param tokenId_ Underlying NFT token id\n @param tokenAddress_ Underlying NFT address\n @param recipient Receiver of initialSupply"
+            },
+            "functionSelector": "767ab122",
+            "id": 4155,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "initialize",
+            "nameLocation": "549:10:25",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4153,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4142,
+                  "mutability": "mutable",
+                  "name": "name",
+                  "nameLocation": "577:4:25",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4155,
+                  "src": "563:18:25",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 4141,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "563:6:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4144,
+                  "mutability": "mutable",
+                  "name": "symbol",
+                  "nameLocation": "599:6:25",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4155,
+                  "src": "585:20:25",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 4143,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "585:6:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4146,
+                  "mutability": "mutable",
+                  "name": "initialSupply",
+                  "nameLocation": "617:13:25",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4155,
+                  "src": "609:21:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4145,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "609:7:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4148,
+                  "mutability": "mutable",
+                  "name": "tokenId_",
+                  "nameLocation": "642:8:25",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4155,
+                  "src": "634:16:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4147,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "634:7:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4150,
+                  "mutability": "mutable",
+                  "name": "tokenAddress_",
+                  "nameLocation": "662:13:25",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4155,
+                  "src": "654:21:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 4149,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "654:7:25",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4152,
+                  "mutability": "mutable",
+                  "name": "recipient",
+                  "nameLocation": "687:9:25",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4155,
+                  "src": "679:17:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 4151,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "679:7:25",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "559:143:25"
+            },
+            "returnParameters": {
+              "id": 4154,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "711:0:25"
+            },
+            "scope": 4162,
+            "src": "540:172:25",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 4156,
+              "nodeType": "StructuredDocumentation",
+              "src": "718:110:25",
+              "text": "@notice Pass through function to underlying ERC721\n @return _uri Token URI returned from underlying"
+            },
+            "functionSelector": "3c130d90",
+            "id": 4161,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "tokenURI",
+            "nameLocation": "842:8:25",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4157,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "850:2:25"
+            },
+            "returnParameters": {
+              "id": 4160,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4159,
+                  "mutability": "mutable",
+                  "name": "_uri",
+                  "nameLocation": "890:4:25",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4161,
+                  "src": "876:18:25",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 4158,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "876:6:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "875:20:25"
+            },
+            "scope": 4162,
+            "src": "833:63:25",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 4163,
+        "src": "134:765:25",
+        "usedErrors": []
+      }
+    ],
+    "src": "35:865:25"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.11+commit.d7f03943.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.7",
+  "updatedAt": "2022-05-28T13:28:19.981Z",
+  "devdoc": {
+    "author": "jtriley.eth",
+    "kind": "dev",
+    "methods": {
+      "initialize(string,string,uint256,uint256,address,address)": {
+        "params": {
+          "initialSupply": "Initial fractional supply",
+          "name": "Super Fractionalized name",
+          "recipient": "Receiver of initialSupply",
+          "symbol": "Super Fractionalized symbol",
+          "tokenAddress_": "Underlying NFT address",
+          "tokenId_": "Underlying NFT token id"
+        }
+      },
+      "tokenURI()": {
+        "returns": {
+          "_uri": "Token URI returned from underlying"
+        }
+      }
+    },
+    "title": "Interface for Super Fractionalized NFT",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {
+      "initialize(string,string,uint256,uint256,address,address)": {
+        "notice": "Initializes with logic contract, MUST BE UPGRADED"
+      },
+      "tokenURI()": {
+        "notice": "Pass through function to underlying ERC721"
+      }
+    },
+    "version": 1
+  }
+}
