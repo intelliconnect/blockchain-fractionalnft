@@ -1,0 +1,380 @@
+{
+  "contractName": "UUPSUtils",
+  "abi": [],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.13+commit.abaa5c0e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"stateVariables\":{\"_IMPLEMENTATION_SLOT\":{\"details\":\"Implementation slot constant. Using https://eips.ethereum.org/EIPS/eip-1967 standard Storage slot 0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc (obtained as bytes32(uint256(keccak256('eip1967.proxy.implementation')) - 1)).\"}},\"title\":\"UUPS (Universal Upgradeable Proxy Standard) Shared Library\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/upgradability/UUPSUtils.sol\":\"UUPSUtils\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/upgradability/UUPSUtils.sol\":{\"keccak256\":\"0xffec084e77ce3c0b595f0612687242f3d8b7a84cab15e5650c17428ee48d0b5b\",\"license\":\"AGPLv3\",\"urls\":[\"bzz-raw://be0183816467872b053562d9a737042ac3a91ea67e3c74e03de5db7226f3e73b\",\"dweb:/ipfs/QmUyi4YXh1T7MExbrLwZ6rAdXTPChF8q27YpZxxniR6CHM\"]}},\"version\":1}",
+  "bytecode": "0x60566037600b82828239805160001a607314602a57634e487b7160e01b600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea264697066735822122028eb4c83ad7c3a74c4ece681880b774213a444812f65a2d44a21b9039275381064736f6c634300080d0033",
+  "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600080fdfea264697066735822122028eb4c83ad7c3a74c4ece681880b774213a444812f65a2d44a21b9039275381064736f6c634300080d0033",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "137:933:101:-:0;;;;;;;;;;;;;;;-1:-1:-1;;;137:933:101;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "137:933:101:-:0;;;;;;;;",
+  "source": "// SPDX-License-Identifier: AGPLv3\npragma solidity 0.8.13;\n\n/**\n * @title UUPS (Universal Upgradeable Proxy Standard) Shared Library\n */\nlibrary UUPSUtils {\n\n    /**\n     * @dev Implementation slot constant.\n     * Using https://eips.ethereum.org/EIPS/eip-1967 standard\n     * Storage slot 0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc\n     * (obtained as bytes32(uint256(keccak256('eip1967.proxy.implementation')) - 1)).\n     */\n    bytes32 internal constant _IMPLEMENTATION_SLOT = 0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc;\n\n    /// @dev Get implementation address.\n    function implementation() internal view returns (address impl) {\n        assembly { // solium-disable-line\n            impl := sload(_IMPLEMENTATION_SLOT)\n        }\n    }\n\n    /// @dev Set new implementation address.\n    function setImplementation(address codeAddress) internal {\n        assembly {\n            // solium-disable-line\n            sstore(\n                _IMPLEMENTATION_SLOT,\n                codeAddress\n            )\n        }\n    }\n\n}\n",
+  "sourcePath": "/home/runner/work/protocol-monorepo/protocol-monorepo/packages/ethereum-contracts/contracts/upgradability/UUPSUtils.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/upgradability/UUPSUtils.sol",
+    "exportedSymbols": {
+      "UUPSUtils": [
+        36415
+      ]
+    },
+    "id": 36416,
+    "license": "AGPLv3",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 36393,
+        "literals": [
+          "solidity",
+          "0.8",
+          ".13"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "35:23:101"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "UUPSUtils",
+        "contractDependencies": [],
+        "contractKind": "library",
+        "documentation": {
+          "id": 36394,
+          "nodeType": "StructuredDocumentation",
+          "src": "60:76:101",
+          "text": " @title UUPS (Universal Upgradeable Proxy Standard) Shared Library"
+        },
+        "fullyImplemented": true,
+        "id": 36415,
+        "linearizedBaseContracts": [
+          36415
+        ],
+        "name": "UUPSUtils",
+        "nameLocation": "145:9:101",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": true,
+            "documentation": {
+              "id": 36395,
+              "nodeType": "StructuredDocumentation",
+              "src": "162:288:101",
+              "text": " @dev Implementation slot constant.\n Using https://eips.ethereum.org/EIPS/eip-1967 standard\n Storage slot 0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc\n (obtained as bytes32(uint256(keccak256('eip1967.proxy.implementation')) - 1))."
+            },
+            "id": 36398,
+            "mutability": "constant",
+            "name": "_IMPLEMENTATION_SLOT",
+            "nameLocation": "481:20:101",
+            "nodeType": "VariableDeclaration",
+            "scope": 36415,
+            "src": "455:115:101",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 36396,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "455:7:101",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "value": {
+              "hexValue": "307833363038393461313362613161333231303636376338323834393264623938646361336532303736636333373335613932306133636135303564333832626263",
+              "id": 36397,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "504:66:101",
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_24440054405305269366569402256811496959409073762505157381672968839269610695612_by_1",
+                "typeString": "int_const 2444...(69 digits omitted)...5612"
+              },
+              "value": "0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc"
+            },
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 36405,
+              "nodeType": "Block",
+              "src": "681:107:101",
+              "statements": [
+                {
+                  "AST": {
+                    "nodeType": "YulBlock",
+                    "src": "700:82:101",
+                    "statements": [
+                      {
+                        "nodeType": "YulAssignment",
+                        "src": "737:35:101",
+                        "value": {
+                          "arguments": [
+                            {
+                              "name": "_IMPLEMENTATION_SLOT",
+                              "nodeType": "YulIdentifier",
+                              "src": "751:20:101"
+                            }
+                          ],
+                          "functionName": {
+                            "name": "sload",
+                            "nodeType": "YulIdentifier",
+                            "src": "745:5:101"
+                          },
+                          "nodeType": "YulFunctionCall",
+                          "src": "745:27:101"
+                        },
+                        "variableNames": [
+                          {
+                            "name": "impl",
+                            "nodeType": "YulIdentifier",
+                            "src": "737:4:101"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "evmVersion": "london",
+                  "externalReferences": [
+                    {
+                      "declaration": 36398,
+                      "isOffset": false,
+                      "isSlot": false,
+                      "src": "751:20:101",
+                      "valueSize": 1
+                    },
+                    {
+                      "declaration": 36402,
+                      "isOffset": false,
+                      "isSlot": false,
+                      "src": "737:4:101",
+                      "valueSize": 1
+                    }
+                  ],
+                  "id": 36404,
+                  "nodeType": "InlineAssembly",
+                  "src": "691:91:101"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 36399,
+              "nodeType": "StructuredDocumentation",
+              "src": "577:36:101",
+              "text": "@dev Get implementation address."
+            },
+            "id": 36406,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "implementation",
+            "nameLocation": "627:14:101",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 36400,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "641:2:101"
+            },
+            "returnParameters": {
+              "id": 36403,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 36402,
+                  "mutability": "mutable",
+                  "name": "impl",
+                  "nameLocation": "675:4:101",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 36406,
+                  "src": "667:12:101",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 36401,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "667:7:101",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "666:14:101"
+            },
+            "scope": 36415,
+            "src": "618:170:101",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 36413,
+              "nodeType": "Block",
+              "src": "896:171:101",
+              "statements": [
+                {
+                  "AST": {
+                    "nodeType": "YulBlock",
+                    "src": "915:146:101",
+                    "statements": [
+                      {
+                        "expression": {
+                          "arguments": [
+                            {
+                              "name": "_IMPLEMENTATION_SLOT",
+                              "nodeType": "YulIdentifier",
+                              "src": "988:20:101"
+                            },
+                            {
+                              "name": "codeAddress",
+                              "nodeType": "YulIdentifier",
+                              "src": "1026:11:101"
+                            }
+                          ],
+                          "functionName": {
+                            "name": "sstore",
+                            "nodeType": "YulIdentifier",
+                            "src": "964:6:101"
+                          },
+                          "nodeType": "YulFunctionCall",
+                          "src": "964:87:101"
+                        },
+                        "nodeType": "YulExpressionStatement",
+                        "src": "964:87:101"
+                      }
+                    ]
+                  },
+                  "evmVersion": "london",
+                  "externalReferences": [
+                    {
+                      "declaration": 36398,
+                      "isOffset": false,
+                      "isSlot": false,
+                      "src": "988:20:101",
+                      "valueSize": 1
+                    },
+                    {
+                      "declaration": 36409,
+                      "isOffset": false,
+                      "isSlot": false,
+                      "src": "1026:11:101",
+                      "valueSize": 1
+                    }
+                  ],
+                  "id": 36412,
+                  "nodeType": "InlineAssembly",
+                  "src": "906:155:101"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 36407,
+              "nodeType": "StructuredDocumentation",
+              "src": "794:40:101",
+              "text": "@dev Set new implementation address."
+            },
+            "id": 36414,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setImplementation",
+            "nameLocation": "848:17:101",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 36410,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 36409,
+                  "mutability": "mutable",
+                  "name": "codeAddress",
+                  "nameLocation": "874:11:101",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 36414,
+                  "src": "866:19:101",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 36408,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "866:7:101",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "865:21:101"
+            },
+            "returnParameters": {
+              "id": 36411,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "896:0:101"
+            },
+            "scope": 36415,
+            "src": "839:228:101",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 36416,
+        "src": "137:933:101",
+        "usedErrors": []
+      }
+    ],
+    "src": "35:1036:101"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.13+commit.abaa5c0e.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.7",
+  "updatedAt": "2022-05-09T17:31:26.010Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "stateVariables": {
+      "_IMPLEMENTATION_SLOT": {
+        "details": "Implementation slot constant. Using https://eips.ethereum.org/EIPS/eip-1967 standard Storage slot 0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc (obtained as bytes32(uint256(keccak256('eip1967.proxy.implementation')) - 1))."
+      }
+    },
+    "title": "UUPS (Universal Upgradeable Proxy Standard) Shared Library",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

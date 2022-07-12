@@ -5,8 +5,8 @@ import {ISuperFractionalizer} from "./interfaces/ISuperFractionalizer.sol";
 import {SuperFractionalized} from "./SuperFractionalized.sol";
 import {ISuperFractionalized} from "./interfaces/ISuperFractionalized.sol";
 
-import {IERC721} from "@openzeppelin/contracts/token/ERC721/IERC721.sol";
-import {ISuperTokenFactory} from "@superfluid-finance/ethereum-contracts/contracts/interfaces/superfluid/ISuperTokenFactory.sol";
+import {IERC721} from "node_modules/@openzeppelin/contracts/token/ERC721/IERC721.sol";
+import {ISuperTokenFactory} from "node_modelules/@superfluid-finance/ethereum-contracts/contracts/interfaces/superfluid/ISuperTokenFactory.sol";
 
 contract SuperFractionalizer is ISuperFractionalizer {
 	ISuperTokenFactory internal immutable _factory;

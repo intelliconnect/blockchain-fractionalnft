@@ -42,7 +42,7 @@ contract("SuperFractionalizer", accounts => {
 		sf = new SuperfluidSDK.Framework({
 			web3,
 			version: "test",
-			additionalContracts: ["INativeSuperToken"],
+			additionalContracts: ["ISuperToken"],
 			contractLoader: builtTruffleContractLoader
 		})
 
@@ -82,10 +82,10 @@ contract("SuperFractionalizer", accounts => {
 
 		const address = tx.receipt.rawLogs[3].address
 
-		const { INativeSuperToken } = sf.contracts
+		const { ISuperToken } = sf.contracts
 
 		const native = await SuperFractionalized.at(address)
-		const proxy = await INativeSuperToken.at(address)
+		const proxy = await ISuperToken.at(address)
 
 		superFractionalizedNFT = { proxy, native }
 
