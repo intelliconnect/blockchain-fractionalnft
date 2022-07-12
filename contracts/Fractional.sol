@@ -10,11 +10,17 @@ import "./ERC20.sol";
 
 contract Fractional is ERC721URIStorage {
     using SafeMath for uint256;
+    /* immutable address datatype which indicates where the value
+    assigned to a variable cannot be changed*/
+
     address immutable _platformAdmin;
+
+    //counters for incrementing token ids
 
     using Counters for Counters.Counter;
     Counters.Counter private _tokenIds;
 
+    //mapping the address of admin
     mapping(address => uint256) public Track;
 
     struct NFT {
@@ -34,23 +40,42 @@ contract Fractional is ERC721URIStorage {
     // NFT id => ERC20 share
     mapping(uint256 => ERC20) public idToShare;
 
+
+
+    // constructor to give a structure for (NFT SYMBOL AND NAME)
     constructor(string memory _name, string memory _symbol)
         ERC721(_name, _symbol)
     {
         _platformAdmin = msg.sender;
     }
 
+
+
+    //Creating a modifier for onlhy admin access
+
+
     modifier onlyPlatformAdmin() {
         require(_platformAdmin == msg.sender, "Invalid operation");
         _;
     }
 
+
+
+    //function to create NFT which takes input as address of the reciever and a tokenuri as counter
     function _create(address receiver, string memory _tokenURI)
         internal
         returns (uint256)
     {
-        uint256 newItemId = _tokenIds.current();
+        //current token id stored in newItemId
+        
+        uint256 newItemId = _tokenIds.current(); 
+
+
+        // Minting of NFT with parameters, receiver i.e address of reciever and the cuurent token ID
         _mint(receiver, newItemId);
+
+
+
         _setTokenURI(newItemId, _tokenURI);
         Track[receiver] = newItemId;
 
