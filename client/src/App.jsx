@@ -97,7 +97,7 @@ export default function App() {
 	return (
 		<div className="app">
 			<header className="header">
-				<h1>Super Fractionalizer</h1>
+				<h1>Intelliconnect NFT Fractionalizer </h1>
 
 				<p>{currentAccount}</p>
 			</header>
